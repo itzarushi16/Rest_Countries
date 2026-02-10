@@ -1,0 +1,186 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT THEME */
+:root {
+  --bg-main: #0b0f14;
+  --bg-surface: #111827;
+  --bg-row: #0f172a;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.15);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+/* BODY – FULL SCREEN */
+body {
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #020617, #020617 40%, #000);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* FULL PAGE WRAPPER */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 50px 80px;
+}
+
+/* PAGE SECTION */
+.card {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.9),
+    rgba(2, 6, 23, 0.95)
+  );
+  border-radius: 28px;
+  padding: 50px;
+  box-shadow:
+    0 0 0 1px var(--border-soft),
+    0 40px 120px rgba(0, 0, 0, 0.9);
+}
+
+/* TITLE */
+h1 {
+  text-align: left;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: var(--accent);
+  margin-bottom: 45px;
+}
+
+/* SUBTLE DIVIDER */
+h1::after {
+  content: "";
+  display: block;
+  margin-top: 12px;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 4px;
+}
+
+/* TABLE WRAPPER */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 18px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 14px;
+}
+
+/* HEADER */
+thead tr {
+  background: transparent;
+}
+
+th {
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* BODY ROWS */
+tbody tr {
+  background: var(--bg-row);
+  transition: all 0.35s ease;
+}
+
+/* ROUNDED ROWS */
+tbody tr td:first-child {
+  border-radius: 14px 0 0 14px;
+}
+
+tbody tr td:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+/* CELLS */
+td {
+  padding: 20px;
+  font-size: 15px;
+  color: var(--text-main);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+/* ROW HOVER */
+tbody tr:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(56, 189, 248, 0.25),
+    rgba(56, 189, 248, 0.05)
+  );
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* FIRST COLUMN EMPHASIS */
+td:first-child {
+  font-weight: 600;
+  color: #e0f2fe;
+}
+
+/* EMPTY STATE */
+.empty {
+  text-align: center;
+  padding: 80px;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  td,
+  th {
+    padding: 14px;
+    font-size: 13px;
+  }
+}
